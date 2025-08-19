@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - UserInfoMapperTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>UserInfoMapperTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.github.gianlucafattarsi.liberapi.context.account.session.mapper.html">com.github.gianlucafattarsi.liberapi.context.account.session.mapper</a> &gt; UserInfoMapperTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.010s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Map Null User to UserInfo</td>
+<td class="success">whenUserNullToUserInfo_thenOk()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Map User to UserInfo</td>
+<td class="success">whenUserToUserInfo_thenOk()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-07-22T15:28:50.925+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [UserInfoMapperTest]: using SpringBootContextLoader
+2025-07-22T15:28:50.926+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.github.gianlucafattarsi.liberapi.context.account.session.mapper.UserInfoMapperTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-07-22T15:28:50.926+02:00  INFO 103467 --- [liber-api-test] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.github.gianlucafattarsi.liberapi.context.account.session.mapper.UserInfoMapperTest]: UserInfoMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-07-22T15:28:50.926+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using ContextCustomizerFactory implementations for test class [UserInfoMapperTest]: [OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, ObservabilityContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, PropertyMappingContextCustomizerFactory, WebDriverContextCustomizerFactory, ImportsContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, HttpGraphQlTesterContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, MockitoContextCustomizerFactory, TestRestTemplateContextCustomizerFactory, WebTestClientContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, BeanOverrideContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
+2025-07-22T15:28:50.927+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using ContextCustomizers for test class [UserInfoMapperTest]: [OnFailureConditionReportContextCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer, DynamicPropertiesContextCustomizer]
+2025-07-22T15:28:50.935+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] ssPathScanningCandidateComponentProvider : Identified candidate component class: file [/home/gianluca/sviluppo/progetti/gianlucafattarsi/liber/liber-api/build/classes/java/main/com/github/gianlucafattarsi/liberapi/LiberApiApplication.class]
+2025-07-22T15:28:50.936+02:00  INFO 103467 --- [liber-api-test] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.github.gianlucafattarsi.liberapi.LiberApiApplication for test class com.github.gianlucafattarsi.liberapi.context.account.session.mapper.UserInfoMapperTest
+2025-07-22T15:28:50.937+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] .s.t.c.u.TestContextSpringFactoriesUtils : Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
+2025-07-22T15:28:50.937+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners for test class [UserInfoMapperTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, BeanOverrideTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, CommonCachesTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, WithSecurityContextTestExecutionListener, EventPublishingTestExecutionListener, ReactorContextTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener, MockitoResetTestExecutionListener]
+2025-07-22T15:28:50.937+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] sContextBeforeModesTestExecutionListener : Before test class: class [UserInfoMapperTest], class annotated with @DirtiesContext [false] with mode [null]
+2025-07-22T15:28:50.937+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 612, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.938+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 613, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.938+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.github.gianlucafattarsi.liberapi.context.account.session.mapper.UserInfoMapperTest
+2025-07-22T15:28:50.938+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] DependencyInjectionTestExecutionListener : Performing dependency injection for test class com.github.gianlucafattarsi.liberapi.context.account.session.mapper.UserInfoMapperTest
+2025-07-22T15:28:50.938+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 614, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.938+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 615, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.939+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] sContextBeforeModesTestExecutionListener : Before test method: class [UserInfoMapperTest], method [whenUserToUserInfo_thenOk], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-07-22T15:28:50.939+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 616, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.939+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 617, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.940+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 618, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.941+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 619, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.941+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 620, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.941+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 621, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.942+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 622, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.942+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 623, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.942+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 624, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.943+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 625, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.943+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 626, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.943+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 627, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.943+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] .c.s.DirtiesContextTestExecutionListener : After test method: class [UserInfoMapperTest], method [whenUserToUserInfo_thenOk], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-07-22T15:28:50.943+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class com.github.gianlucafattarsi.liberapi.context.account.session.mapper.UserInfoMapperTest
+2025-07-22T15:28:50.944+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 628, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.944+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.github.gianlucafattarsi.liberapi.context.account.session.mapper.UserInfoMapperTest
+2025-07-22T15:28:50.944+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] DependencyInjectionTestExecutionListener : Performing dependency injection for test class com.github.gianlucafattarsi.liberapi.context.account.session.mapper.UserInfoMapperTest
+2025-07-22T15:28:50.944+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 629, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.944+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 630, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.945+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] sContextBeforeModesTestExecutionListener : Before test method: class [UserInfoMapperTest], method [whenUserNullToUserInfo_thenOk], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-07-22T15:28:50.945+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 631, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.945+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 632, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.946+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 633, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.946+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 634, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.947+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 635, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.947+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 636, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.948+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 637, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.948+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 638, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.948+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 639, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.948+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 640, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.949+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 641, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.949+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 642, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.949+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] .c.s.DirtiesContextTestExecutionListener : After test method: class [UserInfoMapperTest], method [whenUserNullToUserInfo_thenOk], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-07-22T15:28:50.949+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class com.github.gianlucafattarsi.liberapi.context.account.session.mapper.UserInfoMapperTest
+2025-07-22T15:28:50.949+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 643, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.949+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@1d48d8b9 size = 5, maxSize = 32, parentContextCount = 0, hitCount = 644, missCount = 5, failureCount = 0]
+2025-07-22T15:28:50.950+02:00 DEBUG 103467 --- [liber-api-test] [    Test worker] .c.s.DirtiesContextTestExecutionListener : After test class: class [UserInfoMapperTest], class annotated with @DirtiesContext [false] with mode [null]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.14</a> at Jul 22, 2025, 3:28:54 PM</p>
+</div>
+</div>
+</body>
+</html>

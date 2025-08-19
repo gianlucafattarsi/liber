@@ -1,0 +1,23 @@
+@if (libInfo) {
+<div class="grid grid-cols-12 w-full gap-2 mt-1">
+    <div class="col-span-12">
+        <fa-icon [icon]="['fas', 'book']" class="items-center mr-1"></fa-icon>
+        <span>{{'book' | translate:{count:2} }} : <b>{{libInfo!.booksCount!}}</b></span>
+    </div>
+    <div class="col-span-12">
+        <fa-icon [icon]="['fas', 'clock']" class="items-center mr-1"></fa-icon>
+        <span
+            >{{'library_info_comp.lastAdded' | translate }} :
+            <b>{{libInfo!.lastBookAddedAt! | date:'dd/MM/yyyy' }}</b></span
+        >
+    </div>
+    <div class="col-span-12">
+        <fa-icon [icon]="['fas', 'list-ol']" class="items-center mr-1"></fa-icon>
+        <span>{{'serie' | translate:{count:2} }} : <b>{{libInfo!.seriesCount!}}</b></span>
+    </div>
+    <div class="col-span-12">
+        <fa-icon [icon]="['fas', 'language']" class="items-center mr-1"></fa-icon>
+        <span>{{'language' | translate:{count:2} }} : <b>{{libInfo!.languagesCount!}}</b></span>
+    </div>
+</div>
+}

@@ -1,0 +1,17 @@
+{
+    "login": {
+        "welcome-title": "Welcome to Liber",
+        "sign-in": "Sign In to continue",
+        "sign-up-message": "Don't have an account?"
+    },
+    "signup": {
+        "title": "Sign Up",
+        "sign-in-message": "Already a member?"
+    },
+    "sign-in": "Sign In",
+    "sign-up": "Sign Up",
+    "menu": {
+        "users": "Users",
+        "library": "Libraries"
+    }
+}

@@ -1,0 +1,139 @@
+<div class="card flex flex-col gap-4">
+    <div class="grid grid-cols-12 gap-4">
+        <label
+            for="name"
+            class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0"
+            >{{ 'userName' | translate }}</label
+        >
+        <p-inputgroup class="flex-auto col-span-12 md:col-span-10">
+            <p-inputgroup-addon>
+                <i class="pi pi-user"></i>
+            </p-inputgroup-addon>
+            <input
+                pInputText
+                id="name"
+                type="text"
+                autocomplete="off"
+                [(ngModel)]="_userPayload.userName"
+            />
+        </p-inputgroup>
+
+        <label
+            for="password"
+            class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0"
+            >Password</label
+        >
+        <p-inputgroup class="flex-auto col-span-12 md:col-span-10">
+            <p-inputgroup-addon>
+                <i class="pi pi-key"></i>
+            </p-inputgroup-addon>
+            <p-password
+                id="password"
+                class="w-full"
+                [toggleMask]="true"
+                [ngClass]="{
+                    'ng-invalid ng-dirty': _userPayload.password === '',
+                }"
+                variant="outlined"
+                [(ngModel)]="_userPayload.password"
+            />
+        </p-inputgroup>
+
+        <label
+            for="email"
+            class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0"
+            >{{ 'email' | translate }}</label
+        >
+        <p-inputgroup class="flex-auto col-span-12 md:col-span-10">
+            <p-inputgroup-addon>
+                <i class="pi pi-envelope"></i>
+            </p-inputgroup-addon>
+            <input
+                pInputText
+                id="email"
+                type="text"
+                autocomplete="off"
+                [(ngModel)]="_userPayload.email"
+            />
+        </p-inputgroup>
+
+        <label
+            for="lang"
+            class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0"
+            >{{ 'language' | translate: { count: 1 } }}</label
+        >
+
+        <div class="col-span-12 md:col-span-10">
+            <p-select
+                id="lang"
+                [options]="availableLangs"
+                [(ngModel)]="selectedLang"
+                optionLabel="label"
+                class="w-full"
+            >
+                <ng-template #selectedItem let-selectedOption>
+                    <div class="flex items-center" *ngIf="selectedOption">
+                        <div class="flex gap-2 ml-0 p-0">
+                            <span
+                                [class]="
+                                    'mr-2 flag flag-' + selectedOption.icon
+                                "
+                                style="width: 18px; height: 12px"
+                            ></span>
+                            {{ selectedOption.label | translate }}
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template let-langItem #item>
+                    <div class="flex">
+                        <span
+                            [class]="'mr-2 flag flag-' + langItem.icon"
+                            style="width: 18px; height: 12px"
+                        ></span>
+                        {{ langItem.label | translate }}
+                    </div>
+                </ng-template>
+            </p-select>
+        </div>
+
+        <label
+            for="administrator"
+            class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0"
+            >{{ 'administrator' | translate }}</label
+        >
+        <div class="col-span-12 md:col-span-10">
+            <p-checkbox
+                [(ngModel)]="_userPayload.administrator"
+                [binary]="true"
+                id="administrator"
+            />
+        </div>
+
+        <p-button
+            class="col-span-12 sm:col-span-4 md:col-end-5 md:col-span-4 lg:col-end-7 lg:col-span-3 xl:col-end-9 xl:col-span-2"
+            [style]="{ width: '100%' }"
+            icon="pi pi-arrow-left"
+            label="{{ 'button.undo' | translate }}"
+            severity="secondary"
+            (onClick)="close()"
+        />
+        <p-button
+            class="col-span-12 sm:col-end-9 sm:col-span-4 md:col-end-9 md:col-span-4 lg:col-end-10 lg:col-span-3 xl:col-end-11 xl:col-span-2"
+            [style]="{ width: '100%' }"
+            icon="pi pi-trash"
+            label="{{ 'button.delete' | translate }}"
+            severity="danger"
+            [disabled]="_deleteDisabled"
+            (onClick)="deleteUser($event)"
+        />
+        <p-button
+            class="col-span-12 sm:col-end-13 sm:col-span-4 md:col-end-13 md:col-span-4 lg:col-end-13 lg:col-span-3 xl:col-end-13 xl:col-span-2"
+            [style]="{ width: '100%' }"
+            icon="pi pi-save"
+            label="{{ 'button.save' | translate }}"
+            [disabled]="_userPayload.password === ''"
+            (onClick)="saveUser()"
+        />
+        <p-confirmdialog />
+    </div>
+</div>

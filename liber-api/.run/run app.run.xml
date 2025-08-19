@@ -1,0 +1,20 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="run app" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="24" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="envFilePaths">
+      <option value="$PROJECT_DIR$/.env" />
+    </option>
+    <option name="MAIN_CLASS_NAME" value="com.github.gianlucafattarsi.liberapi.LiberApiApplication" />
+    <module name="liber-api.main" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.github.gianlucafattarsi.liberapi.application.openapi.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

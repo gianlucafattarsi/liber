@@ -1,0 +1,34 @@
+<div class="grid grid-cols-12 gap-4">
+    @if (info) {
+    <app-dashboard-counter
+        [title]="'book' | translate:{count:2}"
+        [value]="info.books"
+        [icon]="'book'"
+        [color]="'orange'"
+        class="col-span-3"
+    />
+    <app-dashboard-counter
+        [title]="'author' | translate:{count:2}"
+        [value]="info.authors"
+        [icon]="'pen-nib'"
+        [color]="'blue'"
+        class="col-span-3"
+    />
+    <app-dashboard-counter
+        [title]="'publisher' | translate:{count:2}"
+        [value]="info.publishers"
+        [icon]="'house-chimney-user'"
+        [color]="'purple'"
+        class="col-span-3"
+    />
+    <app-dashboard-counter
+        [title]="'serie' | translate:{count:2}"
+        [value]="info.series"
+        [icon]="'list-ol'"
+        [color]="'green'"
+        class="col-span-3"
+    />
+    }
+    <app-dashboard-book class="col-span-6"></app-dashboard-book>
+    <app-dashboard-serie class="col-span-6"></app-dashboard-serie>
+</div>

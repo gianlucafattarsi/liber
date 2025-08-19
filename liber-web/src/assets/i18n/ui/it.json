@@ -1,0 +1,14 @@
+{
+    "button": {
+        "new": "Nuov{gender, select, male{o} female{a} other{i}}",
+        "save": "Salva",
+        "delete": "Cancella",
+        "edit": "Modifica",
+        "undo": "Annulla",
+        "import": "Importa",
+        "next": "Avanti",
+        "back": "Indietro",
+        "test": "Test",
+        "refresh": "Ricarica"
+    }
+}

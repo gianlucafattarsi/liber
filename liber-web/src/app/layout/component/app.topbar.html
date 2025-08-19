@@ -1,0 +1,121 @@
+<div class="layout-topbar">
+    <div class="layout-topbar-logo-container">
+        <button
+            class="layout-menu-button layout-topbar-action"
+            (click)="layoutService.onMenuToggle()"
+        >
+            <i class="pi pi-bars"></i>
+        </button>
+        <a class="layout-topbar-logo" routerLink="/">
+            <p-image
+                src="./../../../assets/images/logo-slim.png"
+                alt="Image"
+                width="34"
+            />
+            <span>Liber</span>
+        </a>
+    </div>
+
+    <div class="layout-topbar-actions">
+        <!--
+        <div class="layout-config-menu">
+            <button type="button" class="layout-topbar-action" (click)="toggleDarkMode()">
+                <i [ngClass]="{ 'pi ': true, 'pi-moon': layoutService.isDarkTheme(), 'pi-sun': !layoutService.isDarkTheme() }"></i>
+            </button>
+            <div class="relative">
+                <button class="layout-topbar-action layout-topbar-action-highlight" pStyleClass="@next" enterFromClass="hidden" enterActiveClass="animate-scalein" leaveToClass="hidden" leaveActiveClass="animate-fadeout" [hideOnOutsideClick]="true">
+                    <i class="pi pi-palette"></i>
+                </button>
+                <app-configurator />
+            </div>
+        </div>
+        -->
+        <div>
+            <p-button
+                (click)="menu.toggle($event)"
+                icon="pi pi-language"
+                variant="text"
+                [rounded]="true"
+            />
+            <p-menu #menu [model]="langItems" [popup]="true">
+                <ng-template #submenuheader let-item>
+                    <span class="text-primary font-bold"
+                        >{{ item.label | translate:{count:0} }}</span
+                    >
+                </ng-template>
+                <ng-template #item let-item>
+                    <div class="flex gap-2 ml-2 p-2">
+                        <span
+                            [class]="'mr-2 flag flag-' + item.icon"
+                            style="width: 18px; height: 12px"
+                        ></span>
+                        {{ item.label | translate}}
+                    </div>
+                </ng-template>
+            </p-menu>
+        </div>
+
+        <button
+            class="layout-topbar-menu-button layout-topbar-action"
+            pStyleClass="@next"
+            enterFromClass="hidden"
+            enterActiveClass="animate-scalein"
+            leaveToClass="hidden"
+            leaveActiveClass="animate-fadeout"
+            [hideOnOutsideClick]="true"
+        >
+            <i class="pi pi-ellipsis-v"></i>
+        </button>
+
+        <div class="layout-topbar-menu hidden lg:block">
+            <div class="layout-topbar-menu-content">
+                <button
+                    type="button"
+                    class="layout-topbar-action"
+                    (click)="toggleDarkMode()"
+                >
+                    <i
+                        [ngClass]="{ 'pi ': true, 'pi-moon': layoutService.isDarkTheme(), 'pi-sun': !layoutService.isDarkTheme() }"
+                    ></i>
+                    <span>Chiaro/Scuro</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="layout-topbar-action"
+                    style="
+                        background-color: var(--primary-color);
+                        color: var(--primary-contrast-color);
+                    "
+                    pStyleClass="@next"
+                    enterFromClass="hidden"
+                    enterActiveClass="animate-scalein"
+                    leaveToClass="hidden"
+                    leaveActiveClass="animate-fadeout"
+                    [hideOnOutsideClick]="true"
+                >
+                    <i class="pi pi-palette"></i>
+                    <span>Opzioni</span>
+                </button>
+                <app-configurator />
+                <p-chip
+                    class="py-0! pl-2! pr-4!"
+                    pStyleClass="@next"
+                    enterFromClass="hidden"
+                    enterActiveClass="animate-scalein"
+                    leaveToClass="hidden"
+                    leaveActiveClass="animate-fadeout"
+                    [hideOnOutsideClick]="true"
+                >
+                    <span
+                        class="bg-primary text-primary-contrast rounded-full w-8 h-8 flex items-center justify-center"
+                    >
+                        <i class="pi pi-user"></i>
+                    </span>
+                    <span class="ml-2 font-medium"> {{utente()}} </span>
+                </p-chip>
+                <app-loggeduser-info class="m-2"></app-loggeduser-info>
+            </div>
+        </div>
+    </div>
+</div>

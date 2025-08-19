@@ -1,0 +1,86 @@
+<div class="grid grid-cols-12 gap-8">
+    <div class="col-span-12">
+        <p-card>
+            <ng-template #title>
+                <div class="flex gap-3 items-center">
+                    <fa-icon
+                        [icon]="['fas', 'users']"
+                        size="2x"
+                        class="flex items-center"
+                    ></fa-icon>
+
+                    <h3 class="flex-auto">
+                        {{ 'user' | translate: { count: 2 } }}
+                    </h3>
+
+                    <p-button
+                        icon="pi pi-plus"
+                        label="{{
+                            'button.new' | translate: { gendeer: 'male' }
+                        }}"
+                        class="w-56"
+                        [style]="{ width: '100%' }"
+                        (onClick)="openUtenteDialog(null)"
+                    />
+                </div>
+            </ng-template>
+            <div class="grid grid-cols-12 gap-4 items-center">
+                <div class="col-span-12">
+                    <p-table
+                        [value]="_users"
+                        [tableStyle]="{ 'min-width': '50rem' }"
+                    >
+                        <ng-template #header>
+                            <tr>
+                                <th>{{ 'userName' | translate }}</th>
+                                <th>Email</th>
+                                <th>Admin</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template #body let-user>
+                            <tr (click)="openUtenteDialog(user)">
+                                <td>{{ user.userName }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>
+                                    @if (user.administrator) {
+                                        <i
+                                            class="pi pi-check"
+                                            style="font-size: 1rem"
+                                        ></i>
+                                    }
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>
+<p-dialog
+    [modal]="true"
+    [(visible)]="_userDialogVisible"
+    [style]="{ width: '50rem' }"
+    [maximizable]="true"
+>
+    <ng-template #header>
+        <div class="inline-flex items-center justify-center gap-2 ml-2">
+            <fa-icon
+                [icon]="['fas', 'user']"
+                size="2x"
+                class="flex items-center"
+            ></fa-icon>
+            <span class="font-bold whitespace-nowrap">{{
+                (_selectedUser
+                    ? ('button.edit' | translate)
+                    : ('button.new' | translate)) +
+                    ' ' +
+                    ('user' | translate: { count: 1 })
+            }}</span>
+        </div>
+    </ng-template>
+    <app-user
+        [user]="_selectedUser"
+        (onClose)="_userDialogVisible = false; ngOnInit()"
+    ></app-user>
+</p-dialog>

@@ -1,0 +1,18 @@
+{
+    "user": "Utent{count, plural, =0{i} one{e} other{i}}",
+    "userName": "Nome utente",
+    "password": "Password",
+    "email": "Email",
+    "administrator": "Amministratore",
+    "library": "Libreri{count, plural, =0{e} one{a} other{e}}",
+    "name": "Nome",
+    "path": "Path",
+    "summary": "Riepilogo",
+    "error": "Error{count, plural, =0{i} one{e} other{i}}",
+    "message": "Messagg{count, plural, =0{i} one{io} other{i}}",
+    "state": "Stat{count, plural, =0{i} one{o} other{i}}",
+    "book": "Libr{count, plural, =0{i} one{o} other{i}}",
+    "serie": "Seri{count, plural, =0{e} one{e} other{e}}",
+    "author": "Autor{count, plural, =0{i} one{e} other{i}}",
+    "publisher": "Editor{count, plural, =0{i} one{e} other{i}}"
+}
