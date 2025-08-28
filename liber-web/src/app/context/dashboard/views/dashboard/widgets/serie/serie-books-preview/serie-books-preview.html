@@ -1,0 +1,25 @@
+<p-carousel [value]="books" [numVisible]="3" [numScroll]="1" [circular]="false" [responsiveOptions]="responsiveOptions">
+    <ng-template let-book #item>
+        <div class="m-1 p-4">
+            <div class="mb-0">
+                <div class="relative mx-auto flex justify-center">
+                    <img
+                        width="200"
+                        height="400"
+                        align="”top”"
+                        src="data:image/png;base64,{{book?.cover}}"
+                        class="rounded-border"
+                        style="width: 200px; height: 250px"
+                    />
+                    <p-tag
+                        [value]="'#'+book.seriesIndex"
+                        severity="warn"
+                        class="absolute dark:!bg-surface-300"
+                        [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
+                    />
+                </div>
+            </div>
+            <div class="mb-4 font-medium text-center">{{ book.title }}</div>
+        </div>
+    </ng-template>
+</p-carousel>

@@ -1,0 +1,127 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.5'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'com.ryandens.javaagent-test' version '0.8.0'
+    id 'jacoco'
+}
+
+group = 'com.github.gianlucafattarsi.liberapi'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(24)
+    }
+}
+
+bootJar {
+    exclude("**/dev/**")
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required = true
+        csv.required = true
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.13"
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 1
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext.jjwt_version = '0.13.0'
+
+dependencies {
+    //== Spring
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    //== Hibernate 2nd level cache
+    implementation 'org.hibernate:hibernate-jcache:7.1.0.Final'
+    implementation 'org.ehcache:ehcache::jakarta'
+
+    //== jsonwebtoken
+    implementation "io.jsonwebtoken:jjwt-api:${jjwt_version}"
+    implementation "io.jsonwebtoken:jjwt-impl:${jjwt_version}"
+    implementation "io.jsonwebtoken:jjwt-jackson:${jjwt_version}"
+
+    //== Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    //== mapstruct
+    implementation 'org.mapstruct:mapstruct:1.6.3'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+
+    //== JDBC
+    //implementation 'org.postgresql:postgresql'
+    implementation 'org.mariadb.jdbc:mariadb-java-client'
+    implementation 'org.xerial:sqlite-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    //== Apache Commons
+    implementation 'org.apache.commons:commons-lang3'
+    implementation 'org.apache.commons:commons-collections4:4.5.0'
+
+    implementation 'commons-io:commons-io:2.20.0'
+
+    //== GSON
+    implementation 'com.google.code.gson:gson:2.13.1'
+
+    //== Image processing
+    implementation 'org.imgscalr:imgscalr-lib:4.2'
+
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.11'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'com.h2database:h2'
+    testRuntimeOnly 'org.mockito:mockito-core'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    testJavaagent("net.bytebuddy:byte-buddy-agent:1.15.11")
+
+    implementation("org.testcontainers:testcontainers-bom:1.21.3")
+    testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.testcontainers:testcontainers")
+    testImplementation "org.testcontainers:mariadb"
+}
+
+tasks.named('test') {
+    reports {
+        html.outputLocation = file("test-report")
+    }
+    useJUnitPlatform()
+}

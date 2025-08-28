@@ -1,0 +1,15 @@
+export * from './auth.service';
+import { AuthService } from './auth.service';
+export * from './books.service';
+import { BooksService } from './books.service';
+export * from './library.service';
+import { LibraryService } from './library.service';
+export * from './library-importer.service';
+import { LibraryImporterService } from './library-importer.service';
+export * from './library-info.service';
+import { LibraryInfoService } from './library-info.service';
+export * from './series.service';
+import { SeriesService } from './series.service';
+export * from './users.service';
+import { UsersService } from './users.service';
+export const APIS = [AuthService, BooksService, LibraryService, LibraryImporterService, LibraryInfoService, SeriesService, UsersService];

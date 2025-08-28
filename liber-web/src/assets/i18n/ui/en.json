@@ -1,0 +1,14 @@
+{
+    "button": {
+        "new": "New{gender, select, male{} female{} other{}}",
+        "save": "Save",
+        "delete": "Delete",
+        "edit": "Edit",
+        "undo": "Cancel",
+        "import": "Import",
+        "next": "Next",
+        "back": "Back",
+        "test": "Test",
+        "refresh": "Refresh"
+    }
+}

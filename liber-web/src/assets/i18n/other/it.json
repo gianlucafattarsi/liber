@@ -1,0 +1,17 @@
+{
+    "login": {
+        "welcome-title": "Benvenuto in Liber",
+        "sign-in": "Accedi per continuare",
+        "sign-up-message": "Non hai ancora un account?"
+    },
+    "signup": {
+        "title": "Registrazione",
+        "sign-in-message": "Hai già un account?"
+    },
+    "sign-in": "Accedi",
+    "sign-up": "Registrati",
+    "menu": {
+        "users": "Utenti",
+        "library": "Librerie"
+    }
+}

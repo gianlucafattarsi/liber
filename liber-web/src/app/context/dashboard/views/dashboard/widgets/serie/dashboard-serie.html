@@ -1,0 +1,54 @@
+<p-card class="col-span-12 h-full">
+    <ng-template #title>
+        <div class="flex gap-3 items-center">
+            <fa-icon [icon]="['fas', 'shuffle']" size="2x" class="flex items-center"></fa-icon>
+
+            <h3 class="flex-auto !m-0">{{ 'dashboard_serie.title' | translate}}</h3>
+        </div>
+    </ng-template>
+    <div class="grid grid-cols-12 items-center mt-4">
+        @if (_serie) {
+        <div class="col-span-12">
+            <div class="flex gap-3 items-center">
+                <h4 class="flex-auto !mt-0">{{ _serie.name}}</h4>
+            </div>
+            <!-- ================= Authors ======================================================== -->
+            <p>
+                @if (_authors.length > 5) {
+                <p-tag
+                    value="{{ 'author' | translate:{count:2} }}: {{_authors.length}}"
+                    icon="pi pi-user"
+                    class="mr-1"
+                />
+                } @else { @for (author of _authors; track $index) {
+                <p-tag value="{{author.name}}" icon="pi pi-user" class="mr-1" />
+                } }
+            </p>
+            <!-- ================= Publishers ===================================================== -->
+            <p>
+                @if (_publishers.length > 5) {
+                <p-tag
+                    value="{{ 'publisher' | translate:{count:2} }}: {{_publishers.length}}"
+                    icon="pi pi-home"
+                    class="mr-1"
+                />
+                } @else { @for (publisher of _publishers; track $index) {
+                <p-tag value="{{publisher.name}}" icon="pi pi-home" class="mr-1" />
+                } }
+            </p>
+            <!-- ================= Tags =========================================================== -->
+            <p>
+                @for (tag of _tags; track $index) {
+                <p-tag severity="secondary" value="{{tag.name}}" class="mr-1" />
+                }
+            </p>
+            <!-- ================= Books ========================================================== -->
+            @if (_books.length > 10) {
+            <p><app-serie-books-list [books]="_serie.books!"></app-serie-books-list></p>
+            } @else {
+            <p><app-serie-books-preview [books]="_serie.books!"></app-serie-books-preview></p>
+            }
+        </div>
+        }
+    </div>
+</p-card>

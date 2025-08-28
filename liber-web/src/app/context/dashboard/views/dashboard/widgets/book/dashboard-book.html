@@ -1,0 +1,46 @@
+<p-card class="col-span-12 h-full">
+    <ng-template #title>
+        <div class="flex gap-3 items-center">
+            <fa-icon [icon]="['fas', 'shuffle']" size="2x" class="flex items-center"></fa-icon>
+
+            <h3 class="flex-auto !m-0">{{ 'dashboard_book.title' | translate}}</h3>
+        </div>
+    </ng-template>
+    <div class="grid grid-cols-12 items-center mt-4">
+        <div class="col-span-12">
+            <h4 class="!mt-0">{{_book?.title}}</h4>
+            <div class="float-left mr-2">
+                @if (_book) {
+                <img
+                    width="200"
+                    height="400"
+                    align="”top”"
+                    src="data:image/png;base64,{{_book?.cover}}"
+                    class="rounded-border"
+                />
+                }
+            </div>
+            <p>
+                @for (author of _book?.authors; track $index) {
+                <p-tag value="{{author.name}}" icon="pi pi-user" class="mr-1" />
+                }
+            </p>
+            <p>
+                @for (publisher of _book?.publishers; track $index) {
+                <p-tag value="{{publisher.name}}" icon="pi pi-home" class="mr-1" />
+                }
+            </p>
+            <p>
+                @if (_book?.serie) {
+                <p-tag value="{{_book?.serie?.name}} (nr.{{_book?.seriesIndex}})" icon="pi pi-list" class="mr-1" />
+                }
+            </p>
+            <p>
+                @for (tag of _book?.tags; track $index) {
+                <p-tag severity="secondary" value="{{tag.name}}" class="mr-1" />
+                }
+            </p>
+            <p [innerHTML]="_book?.description"></p>
+        </div>
+    </div>
+</p-card>

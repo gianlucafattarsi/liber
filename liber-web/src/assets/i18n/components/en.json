@@ -1,0 +1,124 @@
+{
+    "login": {
+        "failed": {
+            "title": "Login failed",
+            "message": "Please recheck the username and password and try again."
+        }
+    },
+    "signup": {
+        "successfull": {
+            "title": "New user created",
+            "message": "The password associated with the user has been sent to the email address."
+        },
+        "failed": {
+            "title": "Creazione utente non riuscita",
+            "message": "An error occured, please try again later"
+        }
+    },
+    "users": {
+        "loading": {
+            "failed": {
+                "title": "Error",
+                "message": "Error loading users."
+            }
+        }
+    },
+    "user_comp": {
+        "edit": {
+            "successfull": {
+                "title": "Edit user",
+                "message": "User saved successfully."
+            },
+            "failed": {
+                "title": "Error",
+                "message": "Error saving user."
+            }
+        },
+        "new": {
+            "successfull": {
+                "title": "New user",
+                "message": "New user saved successfully."
+            },
+            "failed": {
+                "title": "Error",
+                "message": "Error creating user."
+            }
+        },
+        "delete": {
+            "successfull": {
+                "title": "Delete user",
+                "message": "User successfully deleted."
+            },
+            "failed": {
+                "title": "Error",
+                "message": "Error deleting user."
+            },
+            "confirmation": {
+                "title": "Attenzione",
+                "message": "Delete <b>''{userName}''</b> user?"
+            }
+        }
+    },
+    "libraries_comp": {
+        "existing_library": {
+            "title": "Existing libraries"
+        },
+        "selected_library": {
+            "info": "Info"
+        },
+        "loading": {
+            "failed": {
+                "title": "Error",
+                "message": "Error loading libraries."
+            }
+        }
+    },
+    "library_info_comp": {
+        "lastAdded": "Last added",
+        "loading": {
+            "failed": {
+                "title": "Error",
+                "message": "Error loading library information."
+            }
+        }
+    },
+    "library_importer": {
+        "title": "Library import",
+        "import": {
+            "importer": {
+                "label": "Importer",
+                "info": "Specify the type of source library to import.",
+                "select": "Select an Importer",
+                "importPath": "Path of the library to import"
+            },
+            "newLibrary": {
+                "title": "New library",
+                "message": "Add all books to a new library"
+            },
+            "existinglibrary": {
+                "title": "Existing library",
+                "message": "Add the books to an existing library"
+            }
+        },
+        "state": {
+            "title": "Stato importazione"
+        }
+    },
+    "dashboard_comp": {
+        "libraries_info": {
+            "loading": {
+                "failed": {
+                    "title": "Error",
+                    "message": "Error loading library information."
+                }
+            }
+        }
+    },
+    "dashboard_book": {
+        "title": "Random ebook"
+    },
+    "dashboard_serie": {
+        "title": "Random serie",
+        "books_of_serie": "books"
+    }
+}

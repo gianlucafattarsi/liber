@@ -1,0 +1,18 @@
+{
+    "user": "User{count, plural, =0{s} one{} other{s}}",
+    "userName": "Username",
+    "password": "Password",
+    "email": "Email",
+    "administrator": "Administrator",
+    "library": "Librar{count, plural, =0{ies} one{y} other{ies}}",
+    "name": "Name",
+    "path": "Path",
+    "summary": "Summary",
+    "error": "Error{count, plural, =0{s} one{} other{s}}",
+    "message": "Message{count, plural, =0{s} one{} other{s}}",
+    "state": "State{count, plural, =0{s} one{} other{s}}",
+    "book": "Book{count, plural, =0{s} one{} other{s}}",
+    "serie": "Serie{count, plural, =0{s} one{} other{s}}",
+    "author": "Author{count, plural, =0{s} one{} other{s}}",
+    "publisher": "Publisher{count, plural, =0{s} one{} other{s}}"
+}

@@ -1,0 +1,218 @@
+<div class="grid grid-cols-12 gap-8">
+    <div class="col-span-12">
+        <p-card>
+            <ng-template #title>
+                <div class="flex gap-3 items-center">
+                    <fa-icon [icon]="['fas', 'download']" size="2x" class="flex items-center"></fa-icon>
+
+                    <h3 class="flex-auto">{{ 'library_importer.title' | translate}}</h3>
+                </div>
+            </ng-template>
+            <div class="grid grid-cols-12 gap-4 items-center mt-5">
+                <p-stepper [value]="1" class="col-span-12" [linear]="true">
+                    <!-- ################################# Importer ############################ -->
+                    <p-step-item [value]="1">
+                        <p-step>{{ 'library_importer.import.importer.label' | translate }}</p-step>
+                        <p-step-panel>
+                            <ng-template #content let-activateCallback="activateCallback">
+                                <div class="flex flex-col h-48">
+                                    <div
+                                        class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium"
+                                    >
+                                        <div class="grid grid-cols-12 gap-4 items-center p-3 w-full">
+                                            <label for="name" class="col-span-12"
+                                                >{{ 'library_importer.import.importer.info' | translate }}</label
+                                            >
+                                            <div class="col-span-12">
+                                                <p-select
+                                                    id="lang"
+                                                    [options]="availableImporters"
+                                                    [(ngModel)]="selectedImporter"
+                                                    placeholder="{{ 'library_importer.import.importer.select' | translate }}"
+                                                    class="w-full"
+                                                >
+                                                    <ng-template #selectedItem let-selectedOption>
+                                                        <div class="flex items-center" *ngIf="selectedOption">
+                                                            <div class="flex gap-2 ml-0 p-0">{{ selectedOption }}</div>
+                                                        </div>
+                                                    </ng-template>
+                                                    <ng-template let-langItem #item>
+                                                        <div class="flex">{{ langItem }}</div>
+                                                    </ng-template>
+                                                </p-select>
+                                            </div>
+
+                                            <label for="importPath" class="col-span-12"
+                                                >{{ 'library_importer.import.importer.importPath' | translate }}</label
+                                            >
+                                            <input
+                                                pInputText
+                                                type="text"
+                                                id="importPath"
+                                                class="col-span-12"
+                                                [(ngModel)]="importPath"
+                                                [invalid]="!importPath || importPath.trim()===''"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-6">
+                                    <p-button
+                                        label="{{'button.next' | translate}}"
+                                        (onClick)="activateCallback(2)"
+                                        [disabled]="isImporterParamValid()"
+                                    />
+                                </div>
+                            </ng-template>
+                        </p-step-panel>
+                    </p-step-item>
+
+                    <!-- ################################# Library ############################ -->
+                    <p-step-item [value]="2">
+                        <p-step>{{ 'library' | translate:{count:1} }}</p-step>
+                        <p-step-panel>
+                            <ng-template #content let-activateCallback="activateCallback">
+                                <div class="flex flex-col h-68">
+                                    <div
+                                        class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium"
+                                    >
+                                        <div class="w-full h-full pb-3 pl-2 pr-2">
+                                            <div class="flex mb-2 gap-2 justify-end"></div>
+                                            <p-tabs [(value)]="libraryType" class="h-full">
+                                                <p-tablist>
+                                                    <p-tab [value]="'newLibrary'"
+                                                        >{{'library_importer.import.newLibrary.title' |
+                                                        translate}}</p-tab
+                                                    >
+                                                    <p-tab [value]="'existinglibrary'"
+                                                        >{{'library_importer.import.existinglibrary.title' |
+                                                        translate}}</p-tab
+                                                    >
+                                                </p-tablist>
+                                                <p-tabpanels class="h-full">
+                                                    <p-tabpanel [value]="'newLibrary'"
+                                                        ><p class="m-0">
+                                                            {{'library_importer.import.newLibrary.message' | translate}}
+                                                        </p>
+                                                        <div class="grid grid-cols-12 w-full gap-4">
+                                                            <label
+                                                                for="name"
+                                                                class="flex items-center col-span-12 md:col-span-2"
+                                                                >{{ 'name' | translate }}</label
+                                                            >
+                                                            <input
+                                                                pInputText
+                                                                type="text"
+                                                                id="name"
+                                                                class="col-span-12 md:col-span-10"
+                                                                [(ngModel)]="newLibraryName"
+                                                                [invalid]="!newLibraryName || newLibraryName.trim()===''"
+                                                                required
+                                                            />
+                                                            <label
+                                                                for="path"
+                                                                class="flex items-center col-span-12 md:col-span-2"
+                                                                >{{ 'path' | translate }}</label
+                                                            >
+                                                            <input
+                                                                pInputText
+                                                                type="text"
+                                                                id="path"
+                                                                class="col-span-12 md:col-span-10"
+                                                                [(ngModel)]="newLibraryPath"
+                                                                [invalid]="!newLibraryPath || newLibraryPath.trim()===''"
+                                                                required
+                                                            />
+                                                        </div>
+                                                    </p-tabpanel>
+                                                    <p-tabpanel [value]="'existinglibrary'"
+                                                        ><p class="m-0">
+                                                            {{'library_importer.import.existinglibrary.message' |
+                                                            translate}}
+                                                        </p>
+                                                        <p-select
+                                                            id="lang"
+                                                            [options]="availableLibraries"
+                                                            [(ngModel)]="selectedLibrary"
+                                                            optionLabel="name"
+                                                            class="w-full"
+                                                        >
+                                                            <ng-template #selectedItem let-selectedOption>
+                                                                <div class="flex items-center" *ngIf="selectedOption">
+                                                                    <div class="flex gap-2 ml-0 p-0">
+                                                                        {{ selectedOption.name }} - {{
+                                                                        selectedOption.path }}
+                                                                    </div>
+                                                                </div>
+                                                            </ng-template>
+                                                            <ng-template let-langItem #item>
+                                                                <div class="flex">
+                                                                    {{ langItem.name }} - {{ langItem.path }}
+                                                                </div>
+                                                            </ng-template>
+                                                        </p-select>
+                                                    </p-tabpanel>
+                                                </p-tabpanels>
+                                            </p-tabs>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex py-6 gap-2">
+                                    <p-button
+                                        label="{{'button.back' | translate}}"
+                                        severity="secondary"
+                                        (onClick)="activateCallback(1)"
+                                    />
+                                    <p-button
+                                        label="{{'button.next' | translate}}"
+                                        (onClick)="activateCallback(3)"
+                                        [disabled]="!isLibraryParamValid()"
+                                    />
+                                </div>
+                            </ng-template>
+                        </p-step-panel>
+                    </p-step-item>
+
+                    <!-- ################################# Summary ############################ -->
+                    <p-step-item [value]="3">
+                        <p-step>{{ 'summary' | translate }}</p-step>
+                        <p-step-panel>
+                            <ng-template #content let-activateCallback="activateCallback">
+                                <div class="flex flex-col h-48">
+                                    <div
+                                        class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium"
+                                    >
+                                        <div class="grid grid-cols-12 w-full gap-4 p-2">
+                                            <label for="name" class="flex items-center col-span-12"
+                                                >{{ 'library_importer.import.importer.label' | translate }}: {{
+                                                selectedImporter }}</label
+                                            >
+
+                                            <label for="path" class="flex items-center col-span-12"
+                                                >{{ 'library' | translate:{count:1} }}: @if (libraryType ===
+                                                'newLibrary') { {{'library_importer.import.newLibrary.title' |
+                                                translate}} ({{newLibraryName}}) } @else {
+                                                {{'library_importer.import.existinglibrary.title' | translate}}
+                                                ({{selectedLibrary?.name}}) }
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex py-6 gap-2">
+                                    <p-button
+                                        label="{{'button.back' | translate}}"
+                                        severity="secondary"
+                                        (onClick)="activateCallback(2)"
+                                    />
+                                    <p-button label="{{'button.test' | translate}}" (click)="import(true)" />
+                                    <p-button label="{{'button.import' | translate}}" (click)="import(false)" />
+                                </div>
+                            </ng-template>
+                        </p-step-panel>
+                    </p-step-item>
+                </p-stepper>
+            </div>
+        </p-card>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+{
+    "login": {
+        "failed": {
+            "title": "Login non riuscito",
+            "message": "Per favore ricontrolla il tuo utente e password e riprova."
+        }
+    },
+    "signup": {
+        "successfull": {
+            "title": "Nuovo utente creato",
+            "message": "La password associata all'utente è stata inviata alla mail indicata."
+        },
+        "failed": {
+            "title": "Creazione utente non riuscita",
+            "message": "Si prega di riprovare più tardi."
+        }
+    },
+    "users": {
+        "loading": {
+            "failed": {
+                "title": "Errore",
+                "message": "Errore durante il caricamento degli utenti."
+            }
+        }
+    },
+    "user_comp": {
+        "edit": {
+            "successfull": {
+                "title": "Modifica utente",
+                "message": "Utente salvato correttamente."
+            },
+            "failed": {
+                "title": "Errore",
+                "message": "Errore durante il salvataggio dell'utente."
+            }
+        },
+        "new": {
+            "successfull": {
+                "title": "Inserimento nuovo utente",
+                "message": "Nuovo utente salvato correttamente."
+            },
+            "failed": {
+                "title": "Errore",
+                "message": "Errore durante il salvataggio dell'utente."
+            }
+        },
+        "delete": {
+            "successfull": {
+                "title": "Cancellazione utente",
+                "message": "Utente cancellato correttamente."
+            },
+            "failed": {
+                "title": "Errore",
+                "message": "Errore durante la cancellazione dell'utente."
+            },
+            "confirmation": {
+                "title": "Attention",
+                "message": "Cancellare l'utente <b>''{userName}''</b>?"
+            }
+        }
+    },
+    "libraries_comp": {
+        "existing_library": {
+            "title": "Librerie esistenti"
+        },
+        "selected_library": {
+            "info": "Info"
+        },
+        "loading": {
+            "failed": {
+                "title": "Errore",
+                "message": "Errore durante il caricamento delle librerie."
+            }
+        }
+    },
+    "library_info_comp": {
+        "lastAdded": "Ultima aggiunta",
+        "loading": {
+            "failed": {
+                "title": "Errore",
+                "message": "Errore durante il caricamento delle informazioni della libreria."
+            }
+        }
+    },
+    "library_importer": {
+        "title": "Importazione libreria",
+        "import": {
+            "importer": {
+                "label": "Importer",
+                "info": "Specifica il tipo della libreria di origine da importare",
+                "select": "Seleziona un Importer",
+                "importPath": "Percorso della libreria da importare"
+            },
+            "newLibrary": {
+                "title": "Nuova libreria",
+                "message": "Importa tutti i libri in una nuova libreria"
+            },
+            "existinglibrary": {
+                "title": "Libreria esistente",
+                "message": "Aggiungi i libri ad una libreria già esistente"
+            }
+        },
+        "state": {
+            "title": "Stato importazione"
+        }
+    },
+    "dashboard_comp": {
+        "libraries_info": {
+            "loading": {
+                "failed": {
+                    "title": "Errore",
+                    "message": "Errore durante il caricamento delle informazioni della libreria."
+                }
+            }
+        }
+    },
+    "dashboard_book": {
+        "title": "Libro suggerito"
+    },
+    "dashboard_serie": {
+        "title": "Serie suggerita",
+        "books_of_serie": "Libri"
+    }
+}

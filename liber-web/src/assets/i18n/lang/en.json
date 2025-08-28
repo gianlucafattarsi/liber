@@ -1,0 +1,7 @@
+{
+    "language": "Languag{count, plural, =0{es} one{e} other{es}}",
+    "languages": {
+        "italian": "Italian",
+        "english": "English"
+    }
+}

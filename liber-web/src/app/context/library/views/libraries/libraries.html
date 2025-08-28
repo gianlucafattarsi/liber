@@ -1,0 +1,72 @@
+<div class="grid grid-cols-12 gap-8">
+    <div class="col-span-12">
+        <p-card>
+            <ng-template #title>
+                <div class="flex gap-3 items-center">
+                    <fa-icon [icon]="['fas', 'swatchbook']" size="2x" class="flex items-center"></fa-icon>
+
+                    <h3 class="flex-auto">{{ 'library' | translate: { count: 2 } }}</h3>
+                </div>
+            </ng-template>
+            <div class="grid grid-cols-12 gap-4 items-center">
+                <div class="col-span-12">
+                    <p-panel [showHeader]="false">
+                        <!--
+                        <p-button variant="text" severity="secondary">
+                            <fa-icon
+                                [icon]="['fas', 'swatchbook']"
+                                class="flex items-center"
+                            ></fa-icon>
+                            <span
+                                >{{'button.new' | translate:{gender:'female'}
+                                }}</span
+                            >
+                        </p-button>
+                        -->
+                        <p-button variant="text" severity="secondary" routerLink="/library/importer">
+                            <fa-icon [icon]="['fas', 'swatchbook']" class="flex items-center"></fa-icon>
+                            <span>{{'button.import' | translate }}</span></p-button
+                        >
+
+                        <p-button variant="text" severity="secondary" (click)="loadLibraries()">
+                            <fa-icon [icon]="['fas', 'arrows-rotate']" class="flex items-center"></fa-icon>
+                            <span>{{'button.refresh' | translate }}</span></p-button
+                        >
+                    </p-panel>
+                </div>
+                <div class="col-span-6">
+                    <p-fieldset [legend]="'libraries_comp.existing_library.title' | translate">
+                        <p-table
+                            [value]="libraries$"
+                            [scrollable]="true"
+                            scrollHeight="200px"
+                            [rows]="5"
+                            selectionMode="single"
+                            [(selection)]="selectedLibrary"
+                            dataKey="name"
+                            [tableStyle]="{ 'min-width': '10rem' }"
+                        >
+                            <ng-template #header>
+                                <tr>
+                                    <th><b>{{ 'name' | translate }}</b></th>
+                                    <th><b>{{ 'path' | translate }}</b></th>
+                                </tr>
+                            </ng-template>
+                            <ng-template #body let-library>
+                                <tr [pSelectableRow]="library">
+                                    <td>{{ library.name }}</td>
+                                    <td>{{ library.path }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-fieldset>
+                </div>
+                <div class="col-span-6 h-full">
+                    <p-fieldset [legend]="'libraries_comp.selected_library.info' | translate">
+                        <app-library-info [libraryId]="selectedLibrary?.id"></app-library-info>
+                    </p-fieldset>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>
